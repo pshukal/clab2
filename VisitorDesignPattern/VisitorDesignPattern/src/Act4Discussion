@@ -1,0 +1,25 @@
+Strategy Pattern vs. Visitor Pattern:
+
+The Strategy Pattern and the Visitor Pattern are considered to be behavioral design patterns. Both of them
+serve different purposes. The Strategy Pattern is used to define a bunch of algorithms and make them interchangeable.
+It allows a client to choose the algorithm it wants to use at runtime which is a flexible trait of Strategy
+Pattern. On the other hand, Visitor Pattern is used to separate algorithms and the objects on which they work on which
+allows new operations to be added to a set of objects without modifying their classes. The Visitor Pattern is
+useful when you have a stable class hierarchy and you want to add operations that depend on the type of objects
+in the hierarchy. In our vehicle service part, it will be where different vehicles have different service charges.
+
+The Strategy Pattern is more suitable for situations where the behavior of a single class needs to be diverse.
+Like our emissions fee calculation in Activity 3, where the calculation logic can change based on the strategy chosen
+(like one of these - OneEmissionsStrategy or TwoEmissionStrategy). Its also a good choice when behaviors are independent
+of the object structure but are meant to vary.
+On the other hand, the Visitor Pattern is ideal in scenarios where we have a well-defined set of classes and we need to
+perform a series of related operations on them. It allows us to extend the behavior of these classes without modifying
+their source code which is what we did in Activity 1 and 2 with the vehicle inspection service.
+
+In my opinion, the Strategy Pattern makes more sense in scenarios where you need to change the behavior of a specific
+class (like changing how we calculate service charges) and is often easier to implement when the behaviors are dynamic.
+The Visitor Pattern is more useful when dealing with operations that need to be applied across an object structure and
+you want to avoid changing the objects themselves, which makes it very powerful for operations like inspections or
+applying a tax or fee structure across different vehicle types. Both patterns are valuable, but I would choose the
+Strategy Pattern when flexibility in behavior is to be kept in mind, and the Visitor Pattern when operations need
+to be extended across classes without changing the class structure itself.
