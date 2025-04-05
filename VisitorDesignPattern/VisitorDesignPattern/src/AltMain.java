@@ -61,7 +61,9 @@ public class AltMain {
             System.out.println(vehicle);
         }
 
-        int totalCost = new VehicleService().calculateTotal(vehicles.toArray(new IVehicle[0]));
+        String viType = System.getProperty("vi");
+        AltVehicleService service = new AltVehicleService(viType);
+        int totalCost = service.calculateTotal(vehicles.toArray(new IVehicle[0]));
         System.out.println("Total Service Charge: $" + totalCost);
     }
 }

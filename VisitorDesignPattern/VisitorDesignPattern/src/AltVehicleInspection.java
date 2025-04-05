@@ -35,15 +35,4 @@ public class AltVehicleInspection implements IVehicleInspector {
         return serviceCharge;
     }
 
-    public class VehicleFactory {
-        private VehicleFactory() {} // private constructor
-
-        public static IVehicleInspector getVehicleInspector(String prop) {
-            if ("alt".equalsIgnoreCase(prop)) {
-                return new AltVehicleInspection();
-            }
-            return new VehicleInspection();
-        }
-    }
-
 }
